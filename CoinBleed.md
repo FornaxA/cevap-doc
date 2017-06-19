@@ -57,6 +57,19 @@ inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
 
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }```
 
+To turn this into more strict checking, the Stratis based approach has been updated to the following:
+```
+inline bool IsProtocolV1(int nHeight){ return nHeight <= Params().Fork1Height(); }
+inline bool IsProtocolV2(int nHeight){ return nHeight > Params().Fork1Height(); }  
+
+inline bool IsDriftReduced(int64_t nTime) { return nTime > Params().Fork1Time(); } // Drifting Bug Fix, hardfork on Thursday, June 15, 2017 3:41:20 PM GMT
+
+inline int64_t FutureDriftV1(int64_t nTime) { return IsDriftReduced(nTime) ? nTime + 16200 : FutureDriftV2(nTime); }
+inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
+
+inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV1(nHeight) ? FutureDriftV1(nTime) : FutureDriftV2(nTime); }
+```
+
 In main.cpp, the following changes need to be made:
 - [x] Update calls to FutureDrift to include nHeight (in addition to nTime)
 - [ ] Change the FutureDrift() function to return the 'old' drift values only if both the block time and the block height are in the past.
