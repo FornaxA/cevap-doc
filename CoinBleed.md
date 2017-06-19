@@ -1,4 +1,4 @@
-### CoinBleed analysis and fix
+# CoinBleed analysis and fix
 
 ## Analysis
 ION is a PoS coin with masternodes, based on Peercoin, Transfercoin and various other coins. 
