@@ -56,7 +56,8 @@ inline bool IsDriftReduced(int64_t nTime) { nTime > Params().Fork1Time; } // Dri
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 16200; }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
 
-inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }```
+inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
+```
 
 To turn this into more strict checking, the Stratis based approach has been updated to the following:
 ```
