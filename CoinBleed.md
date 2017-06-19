@@ -47,7 +47,8 @@ This enables us to simplify the FutureDrift() functions.
 
 The updated FutureDrift() functions are [here](https://github.com/cevap/ion/blob/midas-algo/src/main.h#L63-71):
 
-```inline bool IsProtocolV1(int nHeight){ return nHeight <= Params().Fork1Height(); }
+```
+inline bool IsProtocolV1(int nHeight){ return nHeight <= Params().Fork1Height(); }
 inline bool IsProtocolV2(int nHeight){ return nHeight > Params().Fork1Height(); }  
 
 inline bool IsDriftReduced(int64_t nTime) { nTime > Params().Fork1Time; } // Drifting Bug Fix, hardfork on Thursday, June 15, 2017 3:41:20 PM GMT
