@@ -1,8 +1,6 @@
-CoinBleed analysis and fix
-===================
+### CoinBleed analysis and fix
 
-
-## Analysis ##
+## Analysis
 ION is a PoS coin with masternodes, based on Peercoin, Transfercoin and various other coins. 
 At date [date], unusual patterns in stake production where observed, which was soon identified as an attack with the following characteristics:
 
@@ -10,7 +8,7 @@ At date [date], unusual patterns in stake production where observed, which was s
  - Difficulty dropped
  - Several blocks were submitted and accepted from low-coin and low-coinage wallets
 
-## Compare to other coins ##
+## Compare to other coins 
 Various other coins include fixes to parts of the block validation process that haven't been included in ION Coin. Such as:
 - Orbitcoin allows a smaller window for blocks from the past
 - Stratis allows a smaller window for blocks from the future
