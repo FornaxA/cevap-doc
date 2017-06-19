@@ -64,8 +64,8 @@ inline bool IsProtocolV2(int nHeight){ return nHeight > Params().Fork1Height(); 
 
 inline bool IsDriftReduced(int64_t nTime) { return nTime > Params().Fork1Time(); } // Drifting Bug Fix, hardfork on Thursday, June 15, 2017 3:41:20 PM GMT
 
-inline int64_t FutureDriftV1(int64_t nTime) { return IsDriftReduced(nTime) ? nTime + 16200 : FutureDriftV2(nTime); }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
+inline int64_t FutureDriftV1(int64_t nTime) { return IsDriftReduced(nTime) ? nTime + 16200 : FutureDriftV2(nTime); }
 
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV1(nHeight) ? FutureDriftV1(nTime) : FutureDriftV2(nTime); }
 ```
