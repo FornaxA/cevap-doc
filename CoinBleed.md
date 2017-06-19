@@ -16,7 +16,7 @@ Various other coins include fixes to parts of the block validation process that 
 
 Blocks from the future
 ### Stratis
-We will incorporate fixes from the Stratis code:
+We will incorporate fixes from the Stratis code that prevent blocks from the future to be submitted:
 
 - [Commit "leave old fork behind"](https://github.com/stratisproject/stratisX/commit/b2bacb4929b76b87fc2543b57155229cbd350096)
 - [Commit "hardfork w/ better syncing"](https://github.com/stratisproject/stratisX/commit/b80d3ea6442d26d9ccae5174b99f52f64af97d8f)
@@ -25,10 +25,16 @@ We will incorporate fixes from the Stratis code:
 
 In Stratis, the following files are updated for a hardfork that addressed a comparable hack:
 - src/main.cpp
-    - Better comparison of GetBlockTime() to FutureDrift()
+    - Better comparison of GetBlockTime() to FutureDrift() 
+        - [here](https://github.com/stratisproject/stratisX/blob/master/src/main.cpp#L1960)
+        - [here](https://github.com/stratisproject/stratisX/blob/master/src/main.cpp#L2055)
+        - [here](https://github.com/stratisproject/stratisX/blob/master/src/main.cpp#L2066)
 - src/main.h
-    - Updated FutureDrift to be dependent on both nTime (timestamp of the node receiving the block) and nHeight (current block height)
+    - Updated FutureDrift to be dependent on both nTime (timestamp of the node receiving the block) and nHeight (current block height) [here](https://github.com/stratisproject/stratisX/blob/master/src/main.h#L62)
 - src/checkpoints.cpp
-    - Added a checkpoint to mark the block of the fork
-    - Later, added a checkpoint to mark the blocks after the fork
+    - Added a checkpoint to mark the block of the fork: [here](https://github.com/stratisproject/stratisX/blob/master/src/checkpoints.cpp#L28)
+    - Later, added a checkpoint to mark the blocks after the fork [here](https://github.com/stratisproject/stratisX/blob/master/src/checkpoints.cpp#L38)
+
+
+Additionally, Stratis incorporates checks to make sure some transactions are not propagated; in particular, transactions that cannot be included in the next block should not be propagated to prevent specific double-spend and DoS attacks; this code can be found [here](https://github.com/stratisproject/stratisX/blob/master/src/main.cpp#L276)
 
