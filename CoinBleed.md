@@ -15,6 +15,7 @@ Various other coins include fixes to parts of the block validation process that 
 - The MIDAS algorithm is less susceptible to difficulty manipulation than the ION Coin difficulty algo.
 
 Blocks from the future
+### Stratis
 We will incorporate fixes from the Stratis code:
 
 - [Commit "leave old fork behind"](https://github.com/stratisproject/stratisX/commit/b2bacb4929b76b87fc2543b57155229cbd350096)
@@ -22,4 +23,12 @@ We will incorporate fixes from the Stratis code:
 - [Commit "hardfork"](https://github.com/stratisproject/stratisX/commit/d2c9e5f1bfe91e0b7fa1aa1d8d1de8f831c7318f)
 - [Commit "Set hardfork date"](https://github.com/stratisproject/stratisX/commit/271c5a10732abc3568464c0861e2fe3a75262a5b)
 
+In Stratis, the following files are updated for a hardfork that addressed a comparable hack:
+- src/main.cpp
+    - Better comparison of GetBlockTime() to FutureDrift()
+- src/main.h
+    - Updated FutureDrift to be dependent on both nTime (timestamp of the node receiving the block) and nHeight (current block height)
+- src/checkpoints.cpp
+    - Added a checkpoint to mark the block of the fork
+    - Later, added a checkpoint to mark the blocks after the fork
 
