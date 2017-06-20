@@ -46,6 +46,9 @@ The public part of this key should be made publicly available, with a hash to id
     - Export this key using `gpg --armor --export <mail address>`
     - Submit the (public) 'ASCII-armored PGP key' to e.g. http://pgp.mit.edu/
     - Send the public key to each place where you need to get access; for example, you could ask a contributor to upload this public key to the ION CE gitian folder.
+    - Import GPG keys using the command line: `gpg --import <filemame>`
+    - Decrypt GPG messages using the command line: `gpg --decrypt <filename>`
+    - Encrypt GPG messages using the command line: `gpg -a --encrypt <filename>`; -a tells gpg to produce ascii-readable output.
 2. Generate a RSA key; the private key is stored on the system that needs to acces github, and the public key is stored on github (or at any other system where you need to get access)
 
 For more information on GPG keys and key exchange, see the [gnupg FAQ](https://www.gnupg.org/gph/en/manual/x56.html).
