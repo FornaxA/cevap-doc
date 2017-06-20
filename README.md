@@ -1,41 +1,31 @@
-## Index
+# Welcome to Developers documentation     
 
-1. [CoinBleed analysis and fix](CoinBleed.md)
+We are still in process of building up developers documentation, we will try to summarize [here](https://cevap.github.io/doc/) for now.
 
-## Welcome to GitHub Pages
+## Related links
 
-You can use the [editor on GitHub](https://github.com/cevap/doc/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+[Technical Documentation - DevWiki](https://cevap.github.io/devwiki/) 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Documentation and 📰 about different issues
 
-### Markdown
+- [CoinBleed analysis and fix suggestion](CoinBleed.md)
+- [Official 📰 by Ionomy©️ Ltd.](https://news.ionomy.com/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Suggested Editors
 
-```markdown
-Syntax highlighted code block
+- [VScode](https://code.visualstudio.com/)
+- [Atom](https://atom.io/)
+- [Eclipse](https://www.eclipse.org/downloads/?)
 
-# Header 1
-## Header 2
-### Header 3
+### Usefull links for contributors
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cevap/doc/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- [GitHub Guides](https://guides.github.com/)
+- [GitHub's Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- [git - the simple guide](https://rogerdudler.github.io/git-guide/)
+- [C++ Refference](http://en.cppreference.com/w/)
+- [The Python 2.7 Language Reference](https://docs.python.org/2/reference/index.html)
+- [Python 3.6.1 documentation](https://docs.python.org/3/)
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and [GitHub](https://github.com/contact) will help you sort it out.
