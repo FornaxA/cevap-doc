@@ -2,6 +2,8 @@
 
 We are still in process of building up developers documentation, we will try to summarize [here](https://cevap.github.io/doc/) for now.
 
+[ION Community Edition Git Repository access documentation](GitAccess.md)
+
 ## Related links
 
 [Technical Documentation - DevWiki](https://cevap.github.io/devwiki/) 
