@@ -74,10 +74,12 @@ inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV1(nHe
 
 In main.cpp, the following changes need to be made:
 - [x] Update calls to FutureDrift to include nHeight (in addition to nTime)
-- [ ] Change the FutureDrift() function to return the 'old' drift values only if both the block time and the block height are in the past.
+- [x] Change the FutureDrift() function to return the 'old' drift values only if both the block time and the block height are in the past.
 - [ ]  Figure out what to do with GetPastTImeLimit()
     - ```if (GetBlockTime() <= pindexPrev->GetPastTimeLimit() || FutureDrift(GetBlockTime(), nHeight) < pindexPrev->GetBlockTime())```
         
 
 # TODO
-- Replace the links to the master repo with links to the lines in the commits? Find better way of showing the source?
+- [ ] Replace the links to the master repo with links to the lines in the commits? Find better way of showing the source?
+- [ ] Document implementation of the Midas algo
+- [ ] Document implementation of past block checks from Orbitcoin
