@@ -10,7 +10,7 @@ At date [date], unusual patterns in stake production where observed, which was s
  - Difficulty dropped
  - Several blocks were submitted and accepted from low-coin and low-coinage wallets
 
-## Compare to other coins 
+### Compare to other coins 
 Various other coins include fixes to parts of the block validation process that haven't been included in ION Coin. Such as:
 - Orbitcoin allows a smaller window for blocks from the past
 - Stratis allows a smaller window for blocks from the future
@@ -80,8 +80,18 @@ In main.cpp, the following changes need to be made:
 - [ ]  Figure out what to do with GetPastTImeLimit()
     - ```if (GetBlockTime() <= pindexPrev->GetPastTimeLimit() || FutureDrift(GetBlockTime(), nHeight) < pindexPrev->GetBlockTime())```
         
+## Debug.logs
 
+Debug logs **are encrypted for CEVAP devs only**. Debug log files are located in [logs](https://github.com/cevap/doc/bin) folder.
+
+- [Debug.log.gpg](logs/debug.log-testnet-earlierfork-successful.gpg)
+- [debug.log-nocheck-nomidas1.asc](logs/debug.log-nocheck-nomidas1.asc)
+- [debug.log-nocheck-nomidas2.asc](logs/debug.log-nocheck-nomidas2.asc)
+- [debug.log-nocheck-nomidas3.asc](logs/debug.log-nocheck-nomidas3.asc)
+
+debug.log-testnet-earlierfork-successful.gpg
 # TODO
 - [ ] Replace the links to the master repo with links to the lines in the commits? Find better way of showing the source?
 - [ ] Document implementation of the Midas algo
 - [ ] Document implementation of past block checks from Orbitcoin
+- [ ] Documentation of test results which shows the attack itself, how it works and how did we stop it
