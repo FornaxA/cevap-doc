@@ -11,7 +11,7 @@ We are still in process of building up developers documentation, we will try to 
 ## Documentation and 📰 about different issues
 
 - [CoinBleed analysis and fix suggestion](CoinBleed.md)
-- [CoinBleed debug.log][logs/README.md]
+- [CoinBleed debug.log](logs/README.md)
 - [Official 📰 by Ionomy©️ Ltd.](https://news.ionomy.com/)
 - [CEVAP's Git Access](GitAccess.md)
 - [How to use GitPages theme](ThemeHowTo.md)
