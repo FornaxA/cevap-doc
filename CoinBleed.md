@@ -84,10 +84,10 @@ In main.cpp, the following changes need to be made:
 
 Debug logs **are encrypted for CEVAP devs only**. Debug log files are located in [logs](https://github.com/cevap/doc/bin) folder.
 
-- [Debug.log.gpg](logs/debug.log-testnet-earlierfork-successful.gpg)
-- [debug.log-nocheck-nomidas1.asc](logs/debug.log-nocheck-nomidas1.asc)
-- [debug.log-nocheck-nomidas2.asc](logs/debug.log-nocheck-nomidas2.asc)
-- [debug.log-nocheck-nomidas3.asc](logs/debug.log-nocheck-nomidas3.asc)
+- [Debug.log.gpg](https://github.com/cevap/doc/blob/master/logs/debug.log-testnet-earlierfork-successful.gpg)
+- [debug.log-nocheck-nomidas1.asc](https://github.com/cevap/doc/blob/master/logs/https://github.com/cevap/doc/blob/master/logs/debug.log-nocheck-nomidas1.asc)
+- [debug.log-nocheck-nomidas2.asc](https://github.com/cevap/doc/blob/master/logs/debug.log-nocheck-nomidas2.asc)
+- [debug.log-nocheck-nomidas3.asc](https://github.com/cevap/doc/blob/master/logs/debug.log-nocheck-nomidas3.asc)
 
 debug.log-testnet-earlierfork-successful.gpg
 # TODO
