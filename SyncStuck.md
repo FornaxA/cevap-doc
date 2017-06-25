@@ -20,8 +20,8 @@ The sync is more likely to stall when multiple clients are running simultaneousl
 ## Log files
 
 Log files can be located on the community repo: 
-- https://github.com/cevap/ion/blob/midas-algo/bin/debug.log-errors/debug-stuck-with-addnode.tar.xz.gpg
-- https://github.com/cevap/ion/blob/midas-algo/bin/debug.log-errors/debug.tar.xz.gpg
+- [Logfile 1](https://github.com/cevap/ion/blob/midas-algo/bin/debug.log-errors/debug-stuck-with-addnode.tar.xz.gpg)
+- [Logfile 2](https://github.com/cevap/ion/blob/midas-algo/bin/debug.log-errors/debug.tar.xz.gpg)
 
 The log files indicate correlation between the syncing problem and the logging of supposed ORPHAN blocks. The client processes an increasing number of blocks as orphans, until the process stalls. The blocks are not actually orphans: they are blocks that have been received early.
 
@@ -86,7 +86,8 @@ iond getblock 3797cfd4ec2ef299d42271c8b1f4332e40bad7d7fda21ba3ece61663c491002c
 
 And then:
 
-```2017-06-24 13:56:07 SetBestChain: new best=bdb25a0b8589d5ac986009877d16dc666a9d2c84715bc7bf46c87aeacddb013d  height=12680  trust=00000000000000000000000000000000000000000000000
+```
+2017-06-24 13:56:07 SetBestChain: new best=bdb25a0b8589d5ac986009877d16dc666a9d2c84715bc7bf46c87aeacddb013d  height=12680  trust=00000000000000000000000000000000000000000000000
 06d87fab882b3f1a5  blocktrust=797934129899347  date=02/12/17 23:28:48
 2017-06-24 13:56:07 ProcessBlock: ACCEPTED
 2017-06-24 13:56:07 ProcessBlock: ORPHAN BLOCK 2, prev=b24fc6313bf26e4b465b70c6da9fc1a0d821aa8c06c310bcd5e76b9f1a85053f
