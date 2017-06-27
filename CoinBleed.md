@@ -10,13 +10,28 @@ At date [date], unusual patterns in stake production where observed, which was s
  - Difficulty dropped
  - Several blocks were submitted and accepted from low-coin and low-coinage wallets
 
-### Compare to other coins 
+## Compare to other coins 
 Various other coins include fixes to parts of the block validation process that haven't been included in ION Coin. Such as:
 - Orbitcoin allows a smaller window for blocks from the past
 - Stratis allows a smaller window for blocks from the future
 - The MIDAS algorithm is less susceptible to difficulty manipulation than the ION Coin difficulty algo.
 
 Blocks from the future
+### Consensus time
+The clients accepted blocks both too far in the future and too far in the past. There are various checks possible on blocks and on transactions to prevent such blocks to be included. Although some of these checks were implemented, there are additional checks possible, and the checks can be implemented more effectively. 
+To prevent clients from lying about the time a transaction is offered, or the time a block has been submitted, the submitted time should be compared to the actual time.
+
+The challenge then is to determine:
+- How much a client's time is allowed to deviate from the actual time
+- What is defined as the actual time
+
+Ioncoin used to allow large deviations from the actual time; in fact, the bitcoin standard values are used. However, bitcoin has a blocktime of 10 minutes, and a very robust miner pool, while Ioncoin has a blocktime of 64 seconds and a developing network of nodes: if there's a good reason, the time window for accepting block can be reconsidered.
+This drift window is addressed in Stratis' fix below.
+
+Additionally, the block (or transaction) should not be in the past. The median time of the last 11 reported blocks will from now on be used to check if the block isn't too far from the past. The check for this time takes place in the [CheckBlock() function](https://github.com/cevap/ion/blob/midas-algo/src/main.cpp#L2675-L2678).
+
+An introduction to the underlying [GetMedianPastTime()](https://github.com/cevap/ion/blob/midas-algo/src/main.h#L1039-L1051) function can be found in the bitcoin developers mailing list for the corresponding [BIP: Using Mediam time-past as endpoint for locktime calculations](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010348.html). Note that we are not using this function to verify if transactions should be accepted, but to verify if blocks can be accepted.
+
 ### Stratis' fixes
 We will incorporate fixes from the Stratis code that prevent blocks from the future to be submitted:
 
@@ -80,18 +95,9 @@ In main.cpp, the following changes need to be made:
 - [ ]  Figure out what to do with GetPastTImeLimit()
     - ```if (GetBlockTime() <= pindexPrev->GetPastTimeLimit() || FutureDrift(GetBlockTime(), nHeight) < pindexPrev->GetBlockTime())```
         
-## Debug.logs
 
-Debug logs **are encrypted for CEVAP devs only**. Debug log files are located in [logs](https://github.com/cevap/doc/bin) folder.
-
-- [Debug.log.gpg](https://github.com/cevap/doc/blob/master/logs/debug.log-testnet-earlierfork-successful.gpg)
-- [debug.log-nocheck-nomidas1.asc](https://github.com/cevap/doc/blob/master/logs/https://github.com/cevap/doc/blob/master/logs/debug.log-nocheck-nomidas1.asc)
-- [debug.log-nocheck-nomidas2.asc](https://github.com/cevap/doc/blob/master/logs/debug.log-nocheck-nomidas2.asc)
-- [debug.log-nocheck-nomidas3.asc](https://github.com/cevap/doc/blob/master/logs/debug.log-nocheck-nomidas3.asc)
-
-debug.log-testnet-earlierfork-successful.gpg
 # TODO
 - [ ] Replace the links to the master repo with links to the lines in the commits? Find better way of showing the source?
 - [ ] Document implementation of the Midas algo
 - [ ] Document implementation of past block checks from Orbitcoin
-- [ ] Documentation of test results which shows the attack itself, how it works and how did we stop it
+- [ ] Assess if GetMedianTimePast() should also be used to verify if transactions can be included in a block.
