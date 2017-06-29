@@ -19,9 +19,9 @@ Con:
 
 ## Discussions in other coins
 
-[Zcash github discussion on difficulty adjustment algorithms](https://github.com/zcash/zcash/issues/147)
-[Auroracoin, timewarp exploit and Kimoto's Gravity Well](https://bitcointalk.org/index.php?topic=552895)
-[Dash and Dark Gravity Wave implementation on github](https://github.com/dashpay/dash/blob/master/src/pow.cpp#L82)
+- [Zcash github discussion on difficulty adjustment algorithms](https://github.com/zcash/zcash/issues/147)
+- [Auroracoin, timewarp exploit and Kimoto's Gravity Well](https://bitcointalk.org/index.php?topic=552895)
+- [Dash and Dark Gravity Wave implementation on github](https://github.com/dashpay/dash/blob/master/src/pow.cpp#L82)
 
 Overview:
 [MPOS overview](https://github.com/MPOS/php-mpos/issues/2403#issuecomment-93710766)
