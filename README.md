@@ -10,6 +10,7 @@ We are still in process of building up developers documentation, we will try to 
 
 ## Documentation and 📰 about different issues
 
+- [Difficulty targeting analysis](DifficultyTargeting.md)
 - [Sychronization issue analysis](SyncStuck.md)
 - [CoinBleed analysis and fix suggestion](CoinBleed.md)
 - [CoinBleed debug.log](logs/README.md)
