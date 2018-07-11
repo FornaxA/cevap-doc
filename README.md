@@ -8,6 +8,10 @@ We are still in process of building up developers documentation, we will try to 
 
 [Technical Documentation - DevWiki](https://cevap.github.io/devwiki/) 
 
+## Howto's and documentation
+
+- [Budget voting: a IIP based example](IIP_vote_1.md)
+
 ## Documentation and 📰 about different issues
 
 - [Difficulty targeting analysis](DifficultyTargeting.md)
