@@ -10,7 +10,8 @@ We are still in process of building up developers documentation, we will try to 
 
 ## Howto's and documentation
 
-- [Budget voting: a IIP based example](IIP_vote_1.md)
+- [Budget proposal creation: a IIP based example](IIP_vote_1.md)
+- [Proposal voting: a IIP based example](IIP_vote_2.md)
 
 ## Documentation and 📰 about different issues
 
