@@ -70,6 +70,19 @@ token balance
 
 Do the same for the other two tokens.
 
+### Create and mint regular tokens
+Regular tokens are created using the token command (not the management token command). 
+Creating a new regular token costs 5x the XDM transaction fee.
+Minting regular tokens also costs 5x the XDM transaction fee.
+This can only be done after creating (or receiving) XDM.
+
+```
+token new CST CustomToken 8 https://www.google.com/ 0
+setgenerate true 1
+token mint rtion1zwypa96m69p36hg8gy0uh2e5uc25fdmyalgh4xwa6n004dpx9u9sqesguh3 gNRx7ujxwYhRXfBaV9436XCVKdCWmoaiup 3000000
+setgenerate true 1
+```
+
 ### Sending tokens
 Sending tokens is done by specifying the groupIdentifier, the recipient address and the token amount.
 
@@ -78,7 +91,7 @@ token send rtion1z0lxvaj2xl9qerhssxwscrjk95g6p69vhq57ajl0m5wraykz7a3qc0t47gs gH4
 setgenerate true 1
 ```
 
-### Inspecting who has XDM
+### Inspecting which addresses hold XDM (or any other token)
 There is an RPC command that wills can the blockchain and return the addresses that hold a specific token - and their token amount.
 By specifying the DarkMatter groupIdentifier, you can verify that DarkMatter fees have been sent to the address specified in chainparams.cpp. 20% of those fees will be distributed over Atom holders and Masternode owners weekly - and the other part will be burned (melted).
 ```
