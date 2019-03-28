@@ -71,12 +71,17 @@ token balance
 Do the same for the other two tokens.
 
 ### Sending tokens
+Sending tokens is done by specifying the groupIdentifier, the recipient address and the token amount.
+
 ```
 token send rtion1z0lxvaj2xl9qerhssxwscrjk95g6p69vhq57ajl0m5wraykz7a3qc0t47gs gH4EH72NBTcen8YUKCABkQBkzcXYABNRHM 5
+setgenerate true 1
 ```
 
 ### Inspecting who has XDM
-
+There is an RPC command that wills can the blockchain and return the addresses that hold a specific token - and their token amount.
+By specifying the DarkMatter groupIdentifier, you can verify that DarkMatter fees have been sent to the address specified in chainparams.cpp. 20% of those fees will be distributed over Atom holders and Masternode owners weekly - and the other part will be burned (melted).
 ```
 scantokens start rtion1z0lxvaj2xl9qerhssxwscrjk95g6p69vhq57ajl0m5wraykz7a3qc0t47gs
 ```
+setgenerate true 1
