@@ -2,6 +2,10 @@
 
 [back to main page](README.md)
 
+## Download the client
+For now, an alpha release can be downloaded here:
+https://github.com/FornaxA/ion/commits/tokengroups
+
 ## Creating and sending tokens (using regtest)
 
 First, ensure that the token debug logging is enabled through adding the following line to ioncoin.conf:
@@ -19,11 +23,11 @@ You'll run the following commands either from the Qt debug console or using ion-
 ### Ensure access to the token management key
 ```
 importprivkey cUnScAFQYLW8J8V9bWr57yj2AopudqTd266s6QuWGMMfMix3Hff4
-setgenerate true 19
+generate 220
 sendtoaddress gAQQQjA4DCT2EZDVK6Jae4mFfB217V43Nt 1
 sendtoaddress gAQQQjA4DCT2EZDVK6Jae4mFfB217V43Nt 1
 sendtoaddress gAQQQjA4DCT2EZDVK6Jae4mFfB217V43Nt 1
-setgenerate true 6
+generate 6
 ```
 
 ### Create the new management tokens
@@ -36,11 +40,11 @@ The managementtoken command can only be used successfully by the team that has a
 
 ```
 managementtoken new MAGIC MagicToken 4 https://wiki.lspace.org/mediawiki/Magic/ 0
-setgenerate true 1
+generate 1
 managementtoken new XDM DarkMatter 13 https://www.darkmatter.info/ 0
-setgenerate true 1
+generate 1
 managementtoken new ATOM Atom 0 https://www.ionomy.com/ 0
-setgenerate true 1
+generate 1
 ```
 
 ### View which tokens exist
@@ -56,12 +60,12 @@ We'll send the tokens and the token authorities to a locally generated new addre
 getnewaddress
 ```
 
-Use the groupIdentifier returned by the `managementtoken new` command (rtion1z0ukpsak22ge6t24g958ycsdad5z5thaahvwvnuwg7qre2l328wscu45hqz for MAGIC in this example) and the generated address (gGnF2fuGxLQcBwDnxm44gr6uEEJ3XcRUbZ for this example) to mint the tokens.
+Use the groupIdentifier returned by the `managementtoken new` command (ionrt1z0ujxl2dxswjh5yeykqmm9qzzq8p6xfxrjfd0xfz0e4yt29wtnesccvnfup for MAGIC in this example) and the generated address (gGnF2fuGxLQcBwDnxm44gr6uEEJ3XcRUbZ for this example) to mint the tokens.
 ```
-token mint rtion1z0ukpsak22ge6t24g958ycsdad5z5thaahvwvnuwg7qre2l328wscu45hqz gGnF2fuGxLQcBwDnxm44gr6uEEJ3XcRUbZ 500
-setgenerate true 1
+token mint ionrt1z0ujxl2dxswjh5yeykqmm9qzzq8p6xfxrjfd0xfz0e4yt29wtnesccvnfup gGnF2fuGxLQcBwDnxm44gr6uEEJ3XcRUbZ 500
+generate 1
 ```
-Do the same for DarkMatter and Atoms. Note that there will be 71.000 DarkMatter and 100.000 Atoms.
+Do the same for DarkMatter and Atoms. Note that there will be 71000 DarkMatter and 100000 Atoms.
 
 And check out the result:
 ```
@@ -78,23 +82,27 @@ This can only be done after creating (or receiving) XDM.
 
 ```
 token new CST CustomToken 8 https://www.google.com/ 0
-setgenerate true 1
-token mint rtion1zwypa96m69p36hg8gy0uh2e5uc25fdmyalgh4xwa6n004dpx9u9sqesguh3 gNRx7ujxwYhRXfBaV9436XCVKdCWmoaiup 3000000
-setgenerate true 1
+generate 1
+token mint ionrt1zd9gl4qp6jqpqp6u380u0eqgwu5rn0z2rhjq5mfvrxwlgygp4mtqq5qatxn gNRx7ujxwYhRXfBaV9436XCVKdCWmoaiup 3000000
+generate 1
 ```
 
 ### Sending tokens
 Sending tokens is done by specifying the groupIdentifier, the recipient address and the token amount.
 
 ```
-token send rtion1z0lxvaj2xl9qerhssxwscrjk95g6p69vhq57ajl0m5wraykz7a3qc0t47gs gH4EH72NBTcen8YUKCABkQBkzcXYABNRHM 5
-setgenerate true 1
+token send ionrt1zvvc47dhn9ntwr45cnp9ap2jq5n96ceuw06d357lg07g2ret675sccwdc9u gH4EH72NBTcen8YUKCABkQBkzcXYABNRHM 5
+generate 1
 ```
 
 ### Inspecting which addresses hold XDM (or any other token)
 There is an RPC command that wills can the blockchain and return the addresses that hold a specific token - and their token amount.
 By specifying the DarkMatter groupIdentifier, you can verify that DarkMatter fees have been sent to the address specified in chainparams.cpp. 20% of those fees will be distributed over Atom holders and Masternode owners weekly - and the other part will be burned (melted).
 ```
-scantokens start rtion1z0lxvaj2xl9qerhssxwscrjk95g6p69vhq57ajl0m5wraykz7a3qc0t47gs
+scantokens start ionrt1zvvc47dhn9ntwr45cnp9ap2jq5n96ceuw06d357lg07g2ret675sccwdc9u
 ```
-setgenerate true 1
+generate 1
+
+(Note that XDM fees are send to the Token Management Key for now, so a wallet that imports this key
+will most likely send the collected fees when trying to send DarkMatter to an address. This wallet must only send DarkMatter
+when distributing fees over MN owners and Atom holders).
