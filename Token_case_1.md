@@ -21,6 +21,16 @@ During this workshop, we will:
 
 ## Case description
 
+Game studio BlackDiamond runs a game called Shooting Stars. The game knows a weekly contest, where each week the top 10 players with the highest scores win a price. Their winnings are paid in the ION currency, and the leaderboard (names and scores of the top 10 players) is published to the ION blockchain - while only the current top 10 is published on their website.
+
+Shooting Stars fan site Perseid.org hosts a forum where gamers and other fans can discuss the game, and show off their achievements. Perseid.org offers encrypted communication to their users, and uses GPG to enable this because GPG is a well-established technology for creating [trusted communication channels](https://blog.mailfence.com/openpgp-public-key/) and to [make your fingerprint know publicly](https://jacob.hoffman-andrews.com/README/the-safe-way-to-put-a-pgp-key-in-your-twitter-bio/). There is no official link between BlackDiamond and Perseid, so the forum members have (until now) no means to validate the claims that other forum members make about their position.
+
+During this workshop, we will implement a system where:
+1) the game studio pays the top 10 prices and publishes the top 10 to the blockchain using a web interface
+2) a forum member can submit a claim that he is the gamer who achieved a specific high score
+3) the forum can publicly send a challenge to that gamer, which he can only solve if he is both the owner of the forum account and the recipient of the in-game price
+
+
 ## Prerequisites
 
 ## Input material
