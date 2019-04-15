@@ -40,10 +40,30 @@ The system should be designed in a way that the blockchain offers transparency
 The impact on the blockchain should be minimized, which means that some data stays off-chain, new core functionality is avoided when possible, and available funtionality is used to its fullest extent. More specifically:
 - The fansite stores the GPG public keys of the users; the public key is not written to the blockchain and there is no encrypted or signed data written to the blockchain.
 - Whenever possible, we will use tokens and token subgroups to tag data stored on the blockchain because that makes the data easy and cheap to retrieve.
-- 
 
 ## Prerequisites
 
-## Input material
+This exercise depends on the completion of all steps in the workshops on:
+- Encoding and decoding data manually: [Workshop Windesheim 14 November 2018
+]](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/753801/Workshop+Windesheim+14+November+2018)
+- Compiling and extending bitcoin-based blockchains: [Workshop Windesheim 7 March 2019](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/27656232/Workshop+Windesheim+7+March+2019)
+
+## Workshop preparations
+
+The workshop will take place at Windesheim on Wednesday 24 April 2019. ProvenStack will host a conference call to discuss the workshop preparations and to discuss questions regarding the case description. During the workhop itself, the students will work in teams on the different aspects of the system. Each self-assigned team will deliver a part of the system, and upload the resulting source code to Github.
+In preparation of this collaborative effort, students are advised to take the following actions:
+
+1) Ensure you have access to a Githib account that you can use during this workshop: either create a new account or confirm you have access to an existing account.
+2) Clone ION's community edition Github repository: https://github.com/cevap/ion and `checkout` the `windesheim-testnet` branch
+3) Create a new SSH key
+    Connect the public key to your Github account
+    Send the public key to the Workshop leaders for access to the web server
+4) Create a new GPG key
+    Upload the GPG key to the [Ubuntu key server](https://keyserver.ubuntu.com/)
+    Share the GPG fingerprint with the Workshop leaders so they can prepare the forum web page
+5) Install VSCode Live Share for easy real-time collaboration (VSCode screen sharing, chat) during the workshop
 
 ## Exercise description
+
+## Input material
+
