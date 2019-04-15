@@ -48,22 +48,38 @@ This exercise depends on the completion of all steps in the workshops on:
 ]](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/753801/Workshop+Windesheim+14+November+2018)
 - Compiling and extending bitcoin-based blockchains: [Workshop Windesheim 7 March 2019](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/27656232/Workshop+Windesheim+7+March+2019)
 
+Specifically, ensure the following:
+- 
+
 ## Workshop preparations
 
 The workshop will take place at Windesheim on Wednesday 24 April 2019. ProvenStack will host a conference call to discuss the workshop preparations and to discuss questions regarding the case description. During the workhop itself, the students will work in teams on the different aspects of the system. Each self-assigned team will deliver a part of the system, and upload the resulting source code to Github.
 In preparation of this collaborative effort, students are advised to take the following actions:
 
 1) Ensure you have access to a Githib account that you can use during this workshop: either create a new account or confirm you have access to an existing account.
-2) Clone ION's community edition Github repository: https://github.com/cevap/ion and `checkout` the `windesheim-testnet` branch
-3) Create a new SSH key
+2) Create a new SSH key
     Connect the public key to your Github account
     Send the public key to the Workshop leaders for access to the web server
-4) Create a new GPG key
-    Upload the GPG key to the [Ubuntu key server](https://keyserver.ubuntu.com/)
-    Share the GPG fingerprint with the Workshop leaders so they can prepare the forum web page
-5) Install VSCode Live Share for easy real-time collaboration (VSCode screen sharing, chat) during the workshop
+3) Create a new GPG key
+    Upload the GPG public key to the [Ubuntu key server](https://keyserver.ubuntu.com/)
+    Share the GPG public key with the Workshop leaders so they can prepare the forum web page
+4) Fork ION's community edition Github repository: https://github.com/cevap/ion to your own Github account
+5) Submit your GPG public key to the branch `windesheim-ws3` on cevap's ion repository, as follows:
+   1) Clone your fork and checkout its `windesheim-ws3` branch
+   2) Copy your GPG public key to the subfolder `/contrib/gpg` in the source folder.
+   3) Add, commit and push the GPG public key either using the command line or a GUI such as gitkraken
+   4) Create a pull request from your fork to the cevap/ion repository (branch `windesheim-ws3`)
+6) Install VSCode Live Share for easy real-time collaboration (VSCode screen sharing, chat) during the workshop
+
+(TODO: add links with manuals for the above steps)
 
 ## Exercise description
+
+## Exercise steps
+
+### Compile your fork
+and `checkout` the `windesheim-testnet` branch
+    Compile the source code; see [Workshop Windesheim 7 March 2019](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/27656232/Workshop+Windesheim+7+March+2019).
 
 ## Input material
 
