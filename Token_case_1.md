@@ -30,6 +30,17 @@ During this workshop, we will implement a system where:
 2) a forum member can submit a claim that he is the gamer who achieved a specific high score
 3) the forum can publicly send a challenge to that gamer, which he can only solve if he is both the owner of the forum account and the recipient of the in-game price
 
+### System design criteria
+
+The system should be designed in a way that the blockchain offers transparency
+- The chain stores the following information on the Leaderboard items: event identifier, player's rank, player's name, player's score.
+- The chain stores the challenges that the forum sent to its forum members, and open challenges are easy to find.
+- The chain stores proof when a challenge has been met successfully.
+
+The impact on the blockchain should be minimized, which means that some data stays off-chain, new core functionality is avoided when possible, and available funtionality is used to its fullest extent. More specifically:
+- The fansite stores the GPG public keys of the users; the public key is not written to the blockchain and there is no encrypted or signed data written to the blockchain.
+- Whenever possible, we will use tokens and token subgroups to tag data stored on the blockchain because that makes the data easy and cheap to retrieve.
+- 
 
 ## Prerequisites
 
