@@ -2,7 +2,7 @@
 
 One of the strengths of blockchain based systems is its capacity to provide transparancy and to manage trust trough encryption.
 
-We will showcase two different means to demonstrate ownership: 1) control over a private key belonging to a blockchain address and 2) control over a GPG private key belonging to a public key. This is combined in an ecosystem comprising of a game studio, a game fan site and the blockchain, where a gamer can proof on a fan site (e.g. as part of a discussion forum) that he is a specific gamer (e.g., the winner of that week's tournament).
+We will showcase two different means to demonstrate ownership: 1) control over a private key belonging to a blockchain address and 2) control over a GPG private key belonging to a public key. This is combined in an ecosystem comprising of a game studio, a game fan site and the blockchain, where a gamer can proof on a fan site (e.g. as part of a discussion forum) that he is a specific gamer (e.g., the winner of that week`s tournament).
 
 ## Context
 
@@ -26,9 +26,9 @@ Game studio BlackDiamond runs a game called Shooting Stars. The game knows a wee
 Shooting Stars fan site Perseid.org hosts a forum where gamers and other fans can discuss the game, and show off their achievements. Perseid.org offers encrypted communication to their users, and uses GPG to enable this because GPG is a well-established technology for creating [trusted communication channels](https://blog.mailfence.com/openpgp-public-key/) and to [make your fingerprint know publicly](https://jacob.hoffman-andrews.com/README/the-safe-way-to-put-a-pgp-key-in-your-twitter-bio/). There is no official link between BlackDiamond and Perseid, so the forum members have (until now) no means to validate the claims that other forum members make about their position.
 
 During this workshop, we will implement a system where:
-1) the game studio pays the top 10 prices and publishes the top 10 to the blockchain using a web interface
-2) a forum member can submit a claim that he is the gamer who achieved a specific high score
-3) the forum can publicly send a challenge to that gamer, which he can only solve if he is both the owner of the forum account and the recipient of the in-game price
+1. the game studio pays the top 10 prices and publishes the top 10 to the blockchain using a web interface
+2. a forum member can submit a claim that he is the gamer who achieved a specific high score
+3. the forum can publicly send a challenge to that gamer, which he can only solve if he is both the owner of the forum account and the recipient of the in-game price
 
 ### System design criteria
 
@@ -56,24 +56,38 @@ Specifically, ensure the following:
 The workshop will take place at Windesheim on Wednesday 24 April 2019. ProvenStack will host a conference call to discuss the workshop preparations and to discuss questions regarding the case description. During the workhop itself, the students will work in teams on the different aspects of the system. Each self-assigned team will deliver a part of the system, and upload the resulting source code to Github.
 In preparation of this collaborative effort, students are advised to take the following actions:
 
-1) Ensure you have access to a Githib account that you can use during this workshop: either create a new account or confirm you have access to an existing account.
-2) Create a new SSH key
-    Connect the public key to your Github account
-    Send the public key to the Workshop leaders for access to the web server
-3) Create a new GPG key
-    Upload the GPG public key to the [Ubuntu key server](https://keyserver.ubuntu.com/)
-    Share the GPG public key with the Workshop leaders so they can prepare the forum web page
-4) Fork ION's community edition Github repository: https://github.com/cevap/ion to your own Github account
-5) Submit your GPG public key to the branch `windesheim-ws3` on cevap's ion repository, as follows:
-   1) Clone your fork and checkout its `windesheim-ws3` branch
-   2) Copy your GPG public key to the subfolder `/contrib/gpg` in the source folder.
-   3) Add, commit and push the GPG public key either using the command line or a GUI such as gitkraken
-   4) Create a pull request from your fork to the cevap/ion repository (branch `windesheim-ws3`)
-6) Install VSCode Live Share for easy real-time collaboration (VSCode screen sharing, chat) during the workshop
+1. Ensure you have access to a Githib account that you can use during this workshop: either create a new account or confirm you have access to an existing account.
+2. Create a new SSH key
+   * Connect the public key to your Github account
+   * Send the public key to the Workshop leaders for access to the web server
+3. Create a new GPG key
+   * Upload the GPG public key to the [Ubuntu key server](https://keyserver.ubuntu.com/)
+   * Share the GPG public key with the Workshop leaders so they can prepare the forum web page
+4. Fork ION's community edition Github repository: https://github.com/cevap/ion to your own Github account
+5. Submit your GPG public key to the branch `windesheim-ws3` on cevap's ion repository, as follows:
+   * Clone your fork and checkout its `windesheim-ws3` branch
+   * Copy your GPG public key to the subfolder `/contrib/gpg` in the source folder.
+   * Add, commit and push the GPG public key either using the command line or a GUI such as gitkraken
+   * Create a pull request from your fork to the cevap/ion repository (branch `windesheim-ws3`)
+6. Install VSCode Live Share for easy real-time collaboration (VSCode screen sharing, chat) during the workshop
 
 (TODO: add links with manuals for the above steps)
 
 ## Exercise description
+
+The following system components need to be implemented:
+1. Game studio web service `Settle winners`
+   
+   This service consists of:
+   * A front-end: input form on a website where the game studio can input the top 10 data: rank, user name, ION address, ION price amount
+   * 
+1. Fan site web service `Offer challenge`
+
+1. Fan site web serivce `Show successful challenges`
+   
+1. ION Core RPC call `senddatatoken`
+   
+1. ION Core RPC call `scansubtokens` 
 
 ## Exercise steps
 
