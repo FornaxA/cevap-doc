@@ -80,7 +80,8 @@ The following system components need to be implemented:
    
    This service consists of:
    * A front-end: input form on a website where the game studio can input the Leaderboard, consisting of top 10 data: rank, user name, ION address, ION price amount. Additionally, the game studio can input an event number to uniquely identify this specific event.
-   * After the service user submitted the Leaderboard data through the website's input form, the service performs calls to the `iond` ION daemon through remote procedure calls (RPC calls). With these calls, the service sends the ION rewards to the Leaders, and the service sends them a transaction that has data (OP_RETURN) in the first output and a special token in the second output.
+   * After the service user submitted the Leaderboard data through the website's input form, the service performs calls to the `iond` ION daemon through remote procedure calls (RPC calls). With these calls, the service sends the ION rewards to the Leaders, and the service sends them a transaction that has a special token (gSS-leaders) in the first output and data (OP_RETURN) in the second output.
+     * The game created the 'game Shooting Star' token, with the ticker name `gSS`. Each event creates its own sub-token, which is identified by the string "leader" and the number of the event (uint64_t). For more information on sub-tokens, read the Sub-token section below. The tokenGroupID of a sub-token can be created using the `ion-cli token subgroup` command.
      * The OP_RETURN data has the following format: 
 
 | Field | Format | Data |
@@ -89,17 +90,20 @@ The following system components need to be implemented:
 | Rank | uint8_t | 1..10 |
 | Name | string | "User Alias" |
 
-     * The 
+1. Fan site web service `Offer challenge`
 
-2. Fan site web service `Offer challenge`
-
-3. Fan site web serivce `Show successful challenges`
+2. Fan site web serivce `Show successful challenges`
    
-4. ION Core RPC call `senddatatoken`
+3. ION Core RPC call `senddatatoken`
    
-5. ION Core RPC call `scansubtokens` 
+4. ION Core RPC call `scansubtokens` 
 
-## Exercise steps
+## In-depth information
+
+### Sub-tokens
+
+https://docs.google.com/document/d/1X-yrqBJNj6oGPku49krZqTMGNNEWnUJBRFjX7fJXvTs/edit#heading=h.j750cugps2pr
+
 
 ### Compile your fork
 and `checkout` the `windesheim-testnet` branch
