@@ -7,17 +7,17 @@ We will showcase two different means to demonstrate ownership: 1) control over a
 ## Context
 
 In two workshops, ProvenStack and students went through the basics of:
-- Manual encoding, decoding and writing data on blockchain families based on the bitcoin core
-- Setup and use a full developer environment for bitcoin core development
-- Adding remote procedure calls to their blockchain clients
-- Compile their modified clients
+* Manual encoding, decoding and writing data on blockchain families based on the bitcoin core
+* Setup and use a full developer environment for bitcoin core development
+* Adding remote procedure calls to their blockchain clients
+* Compile their modified clients
 
 During this workshop, we will:
-- Create and share a gpg key for encrypting, decrypting and signing messages
-- Alpha test an utxo based token system for bitcoin families
-- Link web technology to the blockchain
-- Combine tokens with on-chain data to create new functionality
-- Collaborate within a team using git and github
+* Create and share a gpg key for encrypting, decrypting and signing messages
+* Alpha test an utxo based token system for bitcoin families
+* Link web technology to the blockchain
+* Combine tokens with on-chain data to create new functionality
+* Collaborate within a team using git and github
 
 ## Case description
 
@@ -33,9 +33,9 @@ During this workshop, we will implement a system where:
 ### System design criteria
 
 The system should be designed in a way that the blockchain offers transparency
-- The chain stores the following information on the Leaderboard items: event identifier, player's rank, player's name, player's score.
-- The chain stores the challenges that the forum sent to its forum members, and open challenges are easy to find.
-- The chain stores proof when a challenge has been met successfully.
+* The chain stores the following information on the Leaderboard items: event identifier, player's rank, player's name, player's score.
+* The chain stores the challenges that the forum sent to its forum members, and open challenges are easy to find.
+* The chain stores proof when a challenge has been met successfully.
 
 The impact on the blockchain should be minimized, which means that some data stays off-chain, new core functionality is avoided when possible, and available funtionality is used to its fullest extent. More specifically:
 - The fansite stores the GPG public keys of the users; the public key is not written to the blockchain and there is no encrypted or signed data written to the blockchain.
@@ -44,12 +44,12 @@ The impact on the blockchain should be minimized, which means that some data sta
 ## Prerequisites
 
 This exercise depends on the completion of all steps in the workshops on:
-- Encoding and decoding data manually: [Workshop Windesheim 14 November 2018
-]](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/753801/Workshop+Windesheim+14+November+2018)
-- Compiling and extending bitcoin-based blockchains: [Workshop Windesheim 7 March 2019](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/27656232/Workshop+Windesheim+7+March+2019)
+* Encoding and decoding data manually: [Workshop Windesheim 14 November 2018
+](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/753801/Workshop+Windesheim+14+November+2018)
+* Compiling and extending bitcoin-based blockchains: [Workshop Windesheim 7 March 2019](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/27656232/Workshop+Windesheim+7+March+2019)
 
 Specifically, ensure the following:
-- 
+* 
 
 ## Workshop preparations
 
@@ -79,15 +79,23 @@ The following system components need to be implemented:
 1. Game studio web service `Settle winners`
    
    This service consists of:
-   * A front-end: input form on a website where the game studio can input the top 10 data: rank, user name, ION address, ION price amount
-   * 
+   * A front-end: input form on a website where the game studio can input the Leaderboard, consisting of top 10 data: rank, user name, ION address, ION price amount
+   * After the service user submitted the Leaderboard data through the website's input form, the service performs calls to the `iond` ION daemon through remote procedure calls (RPC calls). With these calls, the service sends the ION rewards to the Leaders, and the service sends them a transaction that has data (OP_RETURN) in the first output and a special token in the second output.
+     * The OP_RETURN data has the following format: 
+
+| Field | Format | Data |
+| ----- | ------ | ---- |
+| LeaderDataIdentifier | uint64_t | `0x00010203` |
+| Rank | uint8_t | 1..10 |
+| Name | string | "User Alias" |
+
 1. Fan site web service `Offer challenge`
 
-1. Fan site web serivce `Show successful challenges`
+2. Fan site web serivce `Show successful challenges`
    
-1. ION Core RPC call `senddatatoken`
+3. ION Core RPC call `senddatatoken`
    
-1. ION Core RPC call `scansubtokens` 
+4. ION Core RPC call `scansubtokens` 
 
 ## Exercise steps
 
