@@ -76,7 +76,7 @@ In preparation of this collaborative effort, students are advised to take the fo
 ## Exercise description
 
 The following system components need to be implemented:
-1. Game studio web service `Settle winners`
+1. *Game studio web service `Settle winners`*
    
    This service consists of:
    * A front-end: input form on a website where the game studio can input the Leaderboard, consisting of top 10 data: rank, user name, ION address, ION price amount. Additionally, the game studio can input an event number to uniquely identify this specific event.
@@ -90,13 +90,13 @@ The following system components need to be implemented:
 | Rank | uint8_t | 1..10 |
 | Name | string | "User Alias" |
 
-2. Fan site web service `Offer challenge`
+2. *Fan site web service `Offer challenge`*
 
-3. Fan site web serivce `Show successful challenges`
+3. *Fan site web serivce `Show successful challenges`*
    
-4. ION Core RPC call `senddatatoken`
+4. *ION Core RPC call `senddatatoken`*
    
-5. ION Core RPC call `scansubtokens` 
+5. *ION Core RPC call `scansubtokens`*
 
 ## In-depth information
 
