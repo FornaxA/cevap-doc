@@ -79,7 +79,7 @@ The following system components need to be implemented:
 1. Game studio web service `Settle winners`
    
    This service consists of:
-   * A front-end: input form on a website where the game studio can input the Leaderboard, consisting of top 10 data: rank, user name, ION address, ION price amount
+   * A front-end: input form on a website where the game studio can input the Leaderboard, consisting of top 10 data: rank, user name, ION address, ION price amount. Additionally, the game studio can input an event number to uniquely identify this specific event.
    * After the service user submitted the Leaderboard data through the website's input form, the service performs calls to the `iond` ION daemon through remote procedure calls (RPC calls). With these calls, the service sends the ION rewards to the Leaders, and the service sends them a transaction that has data (OP_RETURN) in the first output and a special token in the second output.
      * The OP_RETURN data has the following format: 
 
@@ -88,6 +88,8 @@ The following system components need to be implemented:
 | LeaderDataIdentifier | uint64_t | 0x00010203 |
 | Rank | uint8_t | 1..10 |
 | Name | string | "User Alias" |
+
+     * The 
 
 2. Fan site web service `Offer challenge`
 
