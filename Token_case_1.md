@@ -90,13 +90,13 @@ The following system components need to be implemented:
 | Rank | uint8_t | 1..10 |
 | Name | string | "User Alias" |
 
-1. Fan site web service `Offer challenge`
+2. Fan site web service `Offer challenge`
 
-2. Fan site web serivce `Show successful challenges`
+3. Fan site web serivce `Show successful challenges`
    
-3. ION Core RPC call `senddatatoken`
+4. ION Core RPC call `senddatatoken`
    
-4. ION Core RPC call `scansubtokens` 
+5. ION Core RPC call `scansubtokens` 
 
 ## In-depth information
 
