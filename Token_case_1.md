@@ -71,7 +71,7 @@ In preparation of this collaborative effort, students are advised to take the fo
    * Create a pull request from your fork to the cevap/ion repository (branch `windesheim-ws3`)
 6. Install VSCode Live Share for easy real-time collaboration (VSCode screen sharing, chat) during the workshop
 
-(TODO: add links with manuals for the above steps)
+A manual and additional information on git, SSH keys and GPG can be found [here](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/491648/Git+-+secure+access+and+basic+commands).
 
 ## Exercise description
 
