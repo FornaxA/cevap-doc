@@ -49,7 +49,12 @@ This exercise depends on the completion of all steps in the workshops on:
 * Compiling and extending bitcoin-based blockchains: [Workshop Windesheim 7 March 2019](https://provenstack.atlassian.net/wiki/spaces/EDUCATION/pages/27656232/Workshop+Windesheim+7+March+2019)
 
 Specifically, ensure the following:
-* 
+* An SSH client
+* A dev environment configured for bitcoin families:
+  * including autotools, vscode and git
+* Access to a linux based OS (OSX, Windows with Linux Subsystem, Linux)
+* Knowledge of encoding data
+* Knowledge of adding RPC commands
 
 ## Workshop preparations
 
@@ -84,11 +89,11 @@ The following system components need to be implemented:
      * The game created the 'game Shooting Star' token, with the ticker name `gSS`. Each event creates its own sub-token, which is identified by the string "leader" and the number of the event (uint64_t). For more information on sub-tokens, read the Sub-token section below. The tokenGroupID of a sub-token can be created using the `ion-cli token subgroup` command.
      * The OP_RETURN data has the following format: 
 
-| Field | Format | Data |
-| ----- | ------ | ---- |
-| LeaderDataIdentifier | uint64_t | 0x00010203 |
-| Rank | uint8_t | 1..10 |
-| Name | string | "User Alias" |
+| Field size | Description | Data type | Comment |
+| -----------| ----------- | --------- | ------- |
+| 8 | DataTypeID | uint64_t | 0x00010203 |
+| 1 | Rank | uint8_t | 1..10 |
+| ? | Name | string | "User Alias" |
 
 2. **Fan site web service `Offer challenge`**
 
@@ -111,3 +116,8 @@ and `checkout` the `windesheim-testnet` branch
 
 ## Input material
 
+## Live Share
+Links:
+* https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack
+* https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-audio
+* https://docs.microsoft.com/en-us/visualstudio/liveshare/use/vscode#share-a-terminal
