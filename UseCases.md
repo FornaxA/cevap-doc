@@ -41,8 +41,9 @@ We frame the scenario’s from the perspective of asset exchange – and we stro
 ## Use case template - description
 
 **Name**: A short, descriptive name
-**Actors**: Who can perform this use case? (e.g., a gamer)
-**Goals**: What are the actors trying to achieve? (e.g., the goal of paying for a life is to buy lives to continue playing)
+**Scenario**: What goal is the actor trying to achieve? (e.g., a gamer wants to keep playing after he is out of lives)
+**Feature**: A specific sub-objective that helps realize the goal (e.g., a gamer can pay for lifes using ION)
+**Actor**: Who can perform this use case? (e.g., a gamer)
 **Preconditions**: What must be true before this can be done? (e.g., one should be registered with a game)
 **Summary**: Short summary what happens.
 **Related use cases**: Are they extremely similar to another use case? This is not necessarily a problem.
@@ -51,7 +52,7 @@ We frame the scenario’s from the perspective of asset exchange – and we stro
 
 Please fill out between 10 and 20 use cases using the template on the next page. 
 A good strategy for filling out the use cases is to work in this order:
-1. generate a list of 5-10 goal
+1. generate a list of 5-10 goals
 2. identify the actors and the summary
 3. provide first input to the postconditions
 4. describe the steps
@@ -64,9 +65,11 @@ A markdown table editor for editing the steps in the tables can be found [here](
 
 ### Name
 
-### Actors
+### Scenario
 
-### Goals
+### Feature
+
+### Actor
 
 ### Preconditions
 
