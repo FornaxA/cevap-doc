@@ -20,7 +20,7 @@ Token Management Transactions demonstrate that they are performed by somebody wi
 
 **Preconditions**: 
 
-- A running node (See e.g. [Case "Start Regtest"](UseCases_regtest_Start-Regtest.md))
+- A running node (See e.g. Case "[Start Regtest](UseCases_regtest_Start-regtest.md)")
 - The network (Mainnet, Testnet or Regtest) should be past the TokenStart block height
 - The network has not yet switched to the use of the Magic Token
 
@@ -48,4 +48,4 @@ generate 6
 
 **Related use cases**:
 
-- Case "Create DarkMatter"
+- Case "[Create Management Tokens](UseCases_tokens_Create-Management-Tokens.md)"

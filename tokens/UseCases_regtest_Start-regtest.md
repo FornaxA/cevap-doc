@@ -4,7 +4,7 @@
 
 ## Case "Start Regtest"
 
-**Scenario**: Testing a new feature or a new on-chain application
+**Scenario**: Testing tokens on regtest
 
 **Feature**: The Regtest network allows users to mine blocks on demand
 

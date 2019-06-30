@@ -2,17 +2,17 @@
 
 [back to main page](README.md)
 
-## Case "Create the DarkMatter token with a provable max of 71.000 coins"
+## Case "Create management tokens"
 
-**Scenario**: The ionomy team wants to create and distribute the XDM token according to the IEO
+**Scenario**: Create and distribute the XDM token according to the IEO
 
-**Feature**: Management Tokens can be created when the Token Management Key is available
+**Feature**: Create the Management Tokens which enable regular token operations
 
 **Actor**: The Token Management Key owner
 
 **Summary**:
 
-Before regular users can create tokens using XDM, the following Management Tokens must be available:
+Before regular token operation is enabled, the following Management Tokens must be available:
 - The Magic token group, which will replace the Token Management Key
 - The DarkMatter token group, which users will need to spend as a fee
 - The Atom token group, because Atom token owners will receive part of the DarkMatter fees
@@ -20,7 +20,6 @@ Before regular users can create tokens using XDM, the following Management Token
 The creator of these three token groups:
 - performs a *token management creation transaction* to create the respective token groups, which gives him token authorities for the three token groups. 
 - mints 1000 MAGIC, 71.000 XDM and 100.000 ATOM
-- destroys the DarkMatter token mint authority and the ATOM mint authority
 
 The three token groups are *named token groups*: they have a ticker name, a full name and a website. Currently, the wallet only displays token group
 names when all fields are correctly specified: 
@@ -29,7 +28,6 @@ names when all fields are correctly specified:
 3) Decimal position (between 0 and 16)
 4) Token description document URL (max 79 characters, valid URL)
 5) Document hash (256 bit hexadecimal string, can be 0)
-
 
 **Preconditions**: 
 
@@ -90,7 +88,7 @@ $ generate 1
 Verify that the token groups indeed have been created:
 
 ```
-$ tokeninfo list
+$ tokeninfo all
 [
   {
     "groupIdentifier": "ionrt1zudc0feh",
@@ -172,15 +170,8 @@ $ generate 1
 ]
 ```
 
-And finally, verify that the correct amount of tokens have been created:
-```
-$ token balance
-{
-  "ionrt1z08suycj85usle25z7c8fy0pvqg82759dkant22edca55z5c8q0qc3czz0g": 71000.0000000000000,
-  "ionrt1zw655y77hx0l6m95em7ekcqm78v9v72s04yrsksup43haq0crvtqc9jyfpt": 5000.0000,
-  "ionrt1z0etg43nh9g7h6p6st89vexuzcz967jy856xtzathunhpz0wn7ascea3s6c": 100000
-}
-```
+Verify that the correct amount of tokens have been created using the `token balance` command. 
+See the case [Find token authorities](UseCases_tokens_Find-token-authorities.md) for more detailed information on this command.
 
 **Postconditions**:
 
@@ -194,9 +185,10 @@ $ token balance
 
 **Related use cases**:
 
-- Case "Drop token mint capability - provable token max"
-- Case "Send a token"
-- Case "View your token balance"
-- Case "View information related to a token group"
-- Case "Create a list with: addresses that hold a specific token, how many tokens they hold, and when the tokens were deposited to that address"
-- Case "Create a list with: addresses that receive masternode payouts and the related MN's uptime"
+- Case "[Access Management Tokens](UseCases_regtest_Access-Token-Management-Key.md)
+- Case "[Drop mint capability](UseCases_tokens_Drop-token-mint-capability.md)"
+- Case "[Send tokens](UseCases_tokens_Send-tokens.md)"
+- Case "[Token balance](UseCases_tokens_Token-balance.md)"
+- Case "[View information related to a token group](UseCases_tokens_View-token-information.md)"
+- Case "[Find token authorities](UseCases_tokens_Find-token-authorities.md)"
+- Case "Create a list with addresses that receive masternode payouts and the related MN's uptime"
